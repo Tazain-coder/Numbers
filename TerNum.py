@@ -16,7 +16,10 @@ class TerNum:
             # insert the remainder at the beginning of the value list
             trinary_value.insert(0,str(remainder))
         # return the trinary value with "0t" prepended
-        return "0t"+"".join(trinary_value)
+        if dec < 0:
+            return "-0t"+"".join(trinary_value)
+        else:
+            return "-0t"+"".join(trinary_value)
 
     def is_ternary(self,num):
         #convert to string
