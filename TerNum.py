@@ -71,6 +71,28 @@ class TerNum:
         #if the number is not ternary, we return a message to the user
         else:
             return "Please enter a valid ternary number"
-
+    def all_ternery(self, num_list:list):
+        all_trn = False
+        for i in num_list:
+            if self.is_ternary(i):
+                all_trn = True
+            else:
+                all_trn = False
+                break
+        return all_trn
+        
+    def trnAdd(self, num_list:list):
+        added = 0
+        if self.all_ternery(num_list):
+            for nums in num_list:
+                added += self.trn2dec(nums)
+        return self.dec2trn(added)
+    def trnSub(self, num_list:list):
+        added = 0
+        if self.all_ternery(num_list):
+            for nums in num_list:
+                added -= self.trn2dec(nums)
+        return self.dec2trn(added)
+    
 
 
